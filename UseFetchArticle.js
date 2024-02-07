@@ -6,6 +6,7 @@ const useFetcharticle = (id) => {
         const [article, setArticle] = useState(null);
         const [isPending, setIsPending] = useState(true);
         const [error, setError] = useState(null);
+    
 
   useEffect(() => {
       const fetchData = async () => {
