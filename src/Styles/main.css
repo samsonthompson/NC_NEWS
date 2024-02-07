@@ -1,4 +1,4 @@
-.home-container {
+.container {
     width: 80%;
     margin: 0 auto;
     padding-top: 20px;
@@ -27,3 +27,20 @@
     font-weight: bold;
 }
 
+.username {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.article-body {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.article-image {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
