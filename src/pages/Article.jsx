@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import '../Styles/main.css'
 import useFetcharticle from "../../UseFetchArticle";
+import ArticleComments from "../Components/CommentCard";
 
 const Article = () => {
     
@@ -28,6 +29,10 @@ const Article = () => {
                         {article.body}
                     </p>
                     <img src={article.article_img_url} className="article-image"/>
+                        <div className="comments-section">
+                            <ArticleComments articleId={id} />
+                        </div>
+
                 </div>
             )}
         </div>

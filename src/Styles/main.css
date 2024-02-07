@@ -44,3 +44,21 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+.comment-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #555;
+}
+
+.comment-body {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
