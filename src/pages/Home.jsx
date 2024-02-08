@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import useFetch from "../../UseFetchAll";
 
 const Home = () => {
+     
+    const { data, isPending, error } = useFetch()
     
-   const { data, isPending, error } = useFetch()
- 
     return (
     
             <div className="home-container">

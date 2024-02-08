@@ -45,6 +45,18 @@
     margin-top: 20px;
 }
 
+.comment-form {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    padding: 8px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.comment-title {
+    padding-top: 26px;
+    font-size: 23px;
+}
 .comment-card {
     border: 1px solid #ddd;
     border-radius: 5px;
