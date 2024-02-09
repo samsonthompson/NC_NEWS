@@ -93,11 +93,11 @@ const Article = () => {
                         </form>
                     )}
                         
-                    {commentError && <p>Sorry, we encountered an error please please try again</p>}
+                    {commentError && <p>Your comment has to be more than one character, please try again</p>}
                     {commentPosted && <p>Thank you for your comment</p>}
 
                         <div className="comments-section">
-                            < CommentCard articleId={id} />
+                            < CommentCard articleId={id} userName={userName} />
                         </div>
 
                 </div>
