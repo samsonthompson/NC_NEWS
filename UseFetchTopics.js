@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useFetchComments = (articleId) => {
+const useFetchTopics = () => {
   
-        const [comments, setComments] = useState(null);
+        const [topics, setTopics] = useState([]);
         const [isPending, setIsPending] = useState(true);
         const [error, setError] = useState(null);
 
@@ -11,10 +11,9 @@ const useFetchComments = (articleId) => {
       const fetchData = async () => {
         try{
             const response = await axios
-            .get(`https://nc-news-fz7g.onrender.com/api/articles/${articleId}/comments`)
+            .get(`https://nc-news-fz7g.onrender.com/api/topics`)
             setIsPending(false)
-
-            setComments(response.data.comments)
+            setTopics(response.data.topics)
             setError(null) 
         }
         catch (error) {
@@ -25,8 +24,8 @@ const useFetchComments = (articleId) => {
       fetchData()
   }, [])
 
-  return { comments, isPending, error };
+  return { topics, isPending, error };
 }
 
  
-export default useFetchComments
+export default useFetchTopics

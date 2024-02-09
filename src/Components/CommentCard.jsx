@@ -11,7 +11,6 @@ const CommentCard = ({articleId, userName})  => {
     const [deletedCommentId, setdeletedCommentId] = useState([])
     
     const handleDelete = (comment_id) => {
-        console.log(comment_id, '<<< handle delete has the comment id');
         setIsDeleting(true)
         deleteComment(comment_id, setDeleteError, setIsDeleting)
         setDeletedCommentId((prevDeletedCommentIds) => [
