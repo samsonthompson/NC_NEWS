@@ -28,6 +28,7 @@ const Article = () => {
     const [showCommentForm, setShowCommentForm] = useState(false)
     const userName = useContext(UserContext)
     
+
     useEffect(() => {
         if(article){
             setVotes(article.votes)
