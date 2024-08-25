@@ -6,6 +6,7 @@ import useFetch from "../../UseFetchAll";
 const Home = () => {
      
     const { data, isPending, error } = useFetch()
+    console.log('data fro use fetch', data)
     
     return (
     
@@ -28,17 +29,3 @@ const Home = () => {
         }
         
     export default Home
-    
-    
-    
-    
-    
-    
-    
-    
-    
-       
-       
-       
-       
-    
