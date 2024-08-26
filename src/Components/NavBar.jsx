@@ -3,70 +3,29 @@ import { Link } from "react-router-dom";
 import '../Styles/main.css';
 
 const NavBar = ({ topics }) => {
-  const handleTopicsSelect = (event) => {
-    const selectedTopicURL = event.target.value;
-    window.location.href = selectedTopicURL;
-  };
-
   return (
     <nav className="bg-black text-white p-4">
       {/* Main container */}
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo / Brand */}
         <div className="text-xl font-bold">
-          <Link to="/">Tailnews</Link>
+          <Link to="/">FakeNews</Link>
         </div>
 
         {/* Navigation Links */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex justify-center w-full space-x-6"> {/* Center items with justify-center */}
           <li>
-            <Link to="/" className="hover:text-red-500">Home</Link>
+            <Link to="/" className="hover:text-red-500">HOME</Link>
           </li>
-          <li>
-            <Link to="#" className="hover:text-red-500">Pages</Link>
-          </li>
-          <li>
-            <Link to="#" className="hover:text-red-500">Sport</Link>
-          </li>
-          <li>
-            <Link to="#" className="hover:text-red-500">Travel</Link>
-          </li>
-          <li>
-            <Link to="#" className="hover:text-red-500">Techno</Link>
-          </li>
-          <li>
-            <Link to="#" className="hover:text-red-500">Worklife</Link>
-          </li>
-          <li>
-            <Link to="#" className="hover:text-red-500">Future</Link>
-          </li>
-          <li>
-            <Link to="#" className="hover:text-red-500">More</Link>
-          </li>
+          {/* Dynamically generated topic links */}
+          {topics.map((topic) => (
+            <li key={topic.slug}>
+              <Link to={`/topics/${topic.slug}`} className="hover:text-red-500">
+                {topic.slug.toUpperCase()} {/* Capitalize the whole word */}
+              </Link>
+            </li>
+          ))}
         </ul>
-
-        {/* Topic Selector */}
-        <div className="hidden md:flex items-center ml-4">
-          <h1 className="mr-2 font-semibold">Choose your topic</h1>
-          <form>
-            <select
-              id="select-bar"
-              onChange={handleTopicsSelect}
-              className="bg-gray-800 text-white p-2 rounded"
-            >
-              <option>Please select a topic...</option>
-              {topics.map((topic) => (
-                <option
-                  className="topics-options"
-                  key={topic.slug}
-                  value={`/topics/${topic.slug}`}
-                >
-                  {topic.slug}
-                </option>
-              ))}
-            </select>
-          </form>
-        </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
