@@ -28,48 +28,70 @@ const CommentCard = ({articleId, userName})  => {
     }
     
     return (
-        <div className="comments">
-            <h2 className="comment-title">Comments</h2>
-            
-            {isDeleting ? (
-                <>
-                    <p>We are deleting your comment please bear with us !</p>
-                    {comments
-                        .filter(comment => !deletedCommentId.includes(comment.comment_id))
-                        .map(comment => (
-                            <div className="comment-card" key={comment.comment_id}>
-                                <p className="comment-author">{comment.author}</p>
-                                <p className="comment-body">{comment.body}</p>
-                                {comment.author === userName && (
-                                    <button
-                                        className="delete"
-                                        onClick={() => handleDelete(comment.comment_id)}
-                                    >
-                                        DELETE
-                                    </button>
-                                )}
-                            </div>
-                        ))}
-                </>
-            ) : (
-                comments.map(comment => (
-                    <div className="comment-card" key={comment.comment_id}>
-                        <p className="comment-author">{comment.author}</p>
-                        <p className="comment-body">{comment.body}</p>
-                        {comment.author === userName && (
-                            <button
-                                className="delete"
-                                onClick={() => handleDelete(comment.comment_id)}
-                            >
-                                DELETE
-                            </button>
-                        )}
+        <div className="comments p-4 bg-white shadow-lg rounded-lg mt-8">
+          <h2 className="comment-title text-2xl font-bold mb-4">Comments</h2>
+      
+          {isDeleting ? (
+            <>
+              <p className="text-gray-600 mb-4">
+                We are deleting your comment; please bear with us!
+              </p>
+              {comments
+                .filter((comment) => !deletedCommentId.includes(comment.comment_id))
+                .map((comment) => (
+                  <div
+                    className="comment-card border-b border-gray-200 py-4 flex justify-between items-center"
+                    key={comment.comment_id}
+                  >
+                    <div>
+                      <p className="comment-author text-sm font-semibold text-gray-800">
+                        {comment.author}
+                      </p>
+                      <p className="comment-body text-gray-700 mb-2">{comment.body}</p>
                     </div>
-                ))
-            )}
-        {deleteError && <p>Sorry we we're unable to delete your comment please try again</p>}
+                    {comment.author === userName && (
+                      <button
+                        className="delete text-sm text-gray-800 bg-white border border-black font-semibold py-1 px-3 rounded hover:bg-gray-200 transition-colors duration-300"
+                        onClick={() => handleDelete(comment.comment_id)}
+                      >
+                        Delete
+                      </button>
+                    )}
+                  </div>
+                ))}
+            </>
+          ) : (
+            comments.map((comment) => (
+              <div
+                className="comment-card border-b border-gray-200 py-4 flex justify-between items-center"
+                key={comment.comment_id}
+              >
+                <div>
+                  <p className="comment-author text-sm font-semibold text-gray-800">
+                    {comment.author}
+                  </p>
+                  <p className="comment-body text-gray-700 mb-2">{comment.body}</p>
+                </div>
+                {comment.author === userName && (
+                  <button
+                    className="delete text-sm text-gray-800 bg-white border border-black font-semibold py-1 px-2 rounded hover:bg-gray-200 transition-colors duration-300"
+                    onClick={() => handleDelete(comment.comment_id)}
+                  >
+                    Delete
+                  </button>
+                )}
+              </div>
+            ))
+          )}
+          {deleteError && (
+            <p className="text-red-500 mt-4">
+              Sorry, we were unable to delete your comment. Please try again.
+            </p>
+          )}
         </div>
-    )
+      );
+      
+      
 }
 
 export default CommentCard
