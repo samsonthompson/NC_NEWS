@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className="home-container p-8">
       {error && <div>{error}</div>}
-      {isPending && <div>Loading your fake news</div>}
+      {isPending && <div>Loading your fake news, please bear with us</div>}
 
       {limitedData && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
