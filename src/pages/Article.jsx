@@ -66,10 +66,6 @@ const Article = () => {
             {article.title}
           </h1>
   
-          <p className="text-lg text-gray-600 mb-4">
-            {article.body}
-          </p>
-  
           <div className="w-full mb-4">
           <img
             src={article.article_img_url}
@@ -77,6 +73,11 @@ const Article = () => {
             className="w-full h-auto max-w-full object-cover rounded-lg"
           />
           </div>
+          
+          <p className="text-lg text-gray-600 mb-4">
+            {article.body}
+          </p>
+  
   
     
           <div className="text-left text-sm text-gray-500 mb-8">
