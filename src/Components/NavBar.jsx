@@ -10,7 +10,7 @@ const NavBar = ({ topics }) => {
           <Link to="/">FakeNews</Link>
         </div>
 
-        <ul className="hidden md:flex justify-center w-full space-x-6"> 
+        <ul className="hidden md:flex justify-center w-full space-x-10"> {/* Increased spacing here */}
           <li>
             <Link to="/" className="hover:text-red-500">HOME</Link>
           </li>
