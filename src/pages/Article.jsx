@@ -78,8 +78,7 @@ const Article = () => {
             {article.body}
           </p>
   
-  
-    
+
           <div className="text-left text-sm text-gray-500 mb-8">
             <p>By {article.author}</p>
             <p>{new Date(article.created_at).toLocaleDateString()}</p>
