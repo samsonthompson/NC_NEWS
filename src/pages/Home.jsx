@@ -20,7 +20,7 @@ const Home = () => {
       {limitedData && (
         <div className="grid grid-cols-12 gap-6">
           {/* Articles */}
-          <div className="col-span-9 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="col-span-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {limitedData[0] && (
               <div
                 key={limitedData[0].article_id}
@@ -117,9 +117,8 @@ const Home = () => {
           </div>
 
           {/* Advertisement Section */}
-          <div className="col-span-2 bg-gray-100 p-4">
-            <h3 className="text-lg font-bold mb-4">Advertisement</h3>
-            <p>Your ad content goes here.</p>
+          <div className="col-span-2 bg-gray-100 p-4 relative">
+            <p className="sticky top-0">Your ad content goes here.</p> 
           </div>
         </div>
       )}
